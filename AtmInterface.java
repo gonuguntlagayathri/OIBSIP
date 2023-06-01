@@ -9,28 +9,28 @@ class BankAccount {
 	int transactions = 0;
 	String transactionHistory = "";
 	public void register() {
-		Scanner sc = new Scanner(System.in);
+		Scanner in = new Scanner(System.in);
 		System.out.print("\nEnter Your Name - ");
-		this.name = sc.nextLine();
+		this.name = in.nextLine();
 		System.out.print("\nEnter Your Username - ");
-		this.userName = sc.nextLine();
+		this.userName = in.nextLine();
 		System.out.print("\nEnter Your Password - ");
-		this.password = sc.nextLine();
+		this.password = in.nextLine();
 		System.out.print("\nEnter Your Account Number - ");
-		this.accountNo = sc.nextLine();
+		this.accountNo = in.nextLine();
 		System.out.println("\nRegistration completed..kindly login");
 	}
 	
 	public boolean login() {
 		boolean isLogin = false;
-		Scanner sc = new Scanner(System.in);
+		Scanner in = new Scanner(System.in);
 		while ( !isLogin ) {
 			System.out.print("\nEnter Your Username - ");
-			String Username = sc.nextLine();
+			String Username = in.nextLine();
 			if ( Username.equals(userName) ) {
 				while ( !isLogin ) {
 					System.out.print("\nEnter Your Password - ");
-					String Password = sc.nextLine();
+					String Password = in.nextLine();
 					if ( Password.equals(password) ) {
 						System.out.print("\nLogin successful!!");
 						isLogin = true;
@@ -50,8 +50,8 @@ class BankAccount {
 	public void withdraw() {
 		
 		System.out.print("\nEnter amount to withdraw - ");
-		Scanner sc = new Scanner(System.in);
-		float amount = sc.nextFloat();
+		Scanner in = new Scanner(System.in);
+		float amount = in.nextFloat();
 		try {
 			
 			if ( balance >= amount ) {
@@ -74,8 +74,8 @@ class BankAccount {
 	public void deposit() {
 		
 		System.out.print("\nEnter amount to deposit - ");
-		Scanner sc = new Scanner(System.in);
-		float amount = sc.nextFloat();
+		Scanner in = new Scanner(System.in);
+		float amount = in.nextFloat();
 		
 		try {
 			if ( amount <= 100000f ) {
@@ -96,9 +96,9 @@ class BankAccount {
 	
 	public void transfer() {
 		
-		Scanner sc = new Scanner(System.in);
+		Scanner in = new Scanner(System.in);
 		System.out.print("\nEnter Receipent's Name - ");
-		String receipent = sc.nextLine();
+		String receipent = in.nextLine();
 		System.out.print("\nEnter amount to transfer - ");
 		float amount = sc.nextFloat();
 		
@@ -147,8 +147,8 @@ public class AtmInterface {
 		
 		while ( !flag ) {
 			try {
-				Scanner sc = new Scanner(System.in);
-				input = sc.nextInt();
+				Scanner in = new Scanner(System.in);
+				input = in.nextInt();
 				flag = true;
 				
 				if ( flag && input > limit || input < 1 ) {
